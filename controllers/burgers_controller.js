@@ -20,12 +20,16 @@ router.get("/burgers", function(req, res){
     })
 });
 
-router.post("/api/burgers/:id", function(req, res){
+router.put("/api/burgers/:id", function(req, res){
     let id = req.params.id;
     burgers.updateOne(id, function(data){
         console.log(data);
-    })
+    });
 });
+
+router.put("/api/burgers/:id", function(req, res){
+
+})
 
 
 
