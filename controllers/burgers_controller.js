@@ -27,7 +27,13 @@ router.put("/api/burgers/:id", function(req, res){
     });
 });
 
-router.put("/api/burgers/:id", function(req, res){
+router.post("/api/burgers/:burger_name", function(req, res){
+    let burger_name = req.params.burger_name
+    burgers.insertOne(burger_name, function(data){
+        console.log(data);
+        return data;
+    })
+
 
 })
 
