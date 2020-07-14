@@ -1,23 +1,29 @@
-<h1>Eat Da Burger!</h1>
+<h1>Eat-Da-Burger!</h1>
 
-<h2>Uneaten Burgers</h2>
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-        <li>{{burger_name}} <button class="eat-btn" data-id="{{id}}">Eat burger!</button></li>
-        {{/unless}}
-    {{/each}}
-</ul>
+<div class="row" id="columns">
+    <div class="column">
+        <h2 class="column-header">Uneaten Burgers</h2>
+        <ul>
+            {{#each burgers}}
+                {{#unless devoured}}
+                <li class="uneaten">{{burger_name}} <button class="eat-btn" data-id="{{id}}">Eat burger!</button></li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
 
-<h2>Eaten Burgers</h2>
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-        <li>{{burger_name}}</li>
-        {{/if}}
-    {{/each}}
+    <div class="column">
+        <h2 class="column-header">Eaten Burgers</h2>
+        <ul>
+            {{#each burgers}}
+                {{#if devoured}}
+                <li class="eaten">{{burger_name}}</li>
+                {{/if}}
+            {{/each}}
 
-</ul>
+        </ul>
+    </div>
+</div>
 
 <h2>Add Burger</h2>
 <form class="create-form">
