@@ -15,7 +15,6 @@ router.get("/", function(req, res) {
 
 router.get("/burgers", function(req, res){
     burgers.selectAll(function(data){
-        console.log(data);
         return data;
     })
 });
@@ -23,18 +22,15 @@ router.get("/burgers", function(req, res){
 router.put("/api/burgers/:id", function(req, res){
     let id = req.params.id;
     burgers.updateOne(id, function(data){
-        console.log(data);
+        return data;
     });
 });
 
 router.post("/api/burgers/:burger_name", function(req, res){
     let burger_name = req.params.burger_name
     burgers.insertOne(burger_name, function(data){
-        console.log(data);
         return data;
     })
-
-
 })
 
 
